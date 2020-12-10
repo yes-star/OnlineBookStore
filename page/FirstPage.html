@@ -1,33 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
-    <link rel="stylesheet" href="../CSS/1.css">
+    <!-- <link rel="stylesheet" href="../CSS/1.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            border: 1px;
+            border-color: lightcoral;
+            border-style: dashed;
+            height: 400px;
+        }
+
+        img {
+            border: 0px;
+            border-color: lightcoral;
+            border-style: dashed;
+            vertical-align: top;
+        }
+
+        a {
+            height: 100px;
+            border: 0px;
+            border-color: orange;
+            border-style: dashed;
+            font-size: 28px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            display: inline-block;
+            line-height: 100px;
+        }
+
+        #div1 {
+            border-top: 0px solid orange;
+            position: fixed;
+            height: 100px;
+            width: 100%;
+            background-color: rgba(111, 235, 208, 0.034);
+        }
+
+        #div2 {
+            border: 0px;
+            border-color: lightcoral;
+            border-style: dashed;
+            height: 100px;
+        }
+
+        #a-loading {
+            position: absolute;
+            right: 0;
+        }
+
+        #a-registration {
+            position: absolute;
+            right: 68px;
+        }
+
+        #black_img {
+            vertical-align:top;
+            position: absolute;
+            right: 60px;
+            top: 30px;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>OnlineBookStore</h1>
-    </header>
-    <div id="test1">
-        <table border="1">
-            <tr>
-                <th>首页</th>
-                <th>分类</th>
-                <th>购物车</th>
-                <th>登录</th>
-            </tr>
-            <tr>
-                <td>Searching list</td>
-            </tr>
-            <tr>
-                <td>NULL</td>
-            </tr>
-            <tr>
-                <td>版权所有 翻版必究。联系邮箱：sny666@email.swu.edu.cn</td>
-            </tr>
-        </table>
+    <div id="div1">
+        <img src="../images/图片1.png" height="100px" width="100px" alt="">
+        <a href="#">首页</a>
+        <a href="#">分类</a>
+        <a href="#">购物车</a>
+        <a href="#" id="a-loading">登录</a>
+        <img id="black_img" src="../images/黑图.png" height="40px" width="3px" alt="">
+        <a href="#" id="a-registration">注册</a>
     </div>
+    <div id="div2"></div>
+    <header style="border: 1px;">
+        <h1 style="position: relative;text-align: center;">OnlineBookStore</h1>
+    </header>
+    <!-- /*广告*/ -->
+    <div id="div2"></div>
+    <!-- 热销图书展示区 -->
+    <div></div>
+    <!-- 小说 -->
+    <div></div>
+    <!-- 经典书籍 -->
+    <div></div>
+    <!-- 带哥推荐图书 -->
+    <div></div>
+    <span>版权信息</span>
 </body>
+
 </html>
