@@ -12,6 +12,11 @@
             padding: 0;
         }
 
+        header {
+            position: relative;
+            height: 50px;
+        }
+
         div {
             border: 1px;
             border-color: lightcoral;
@@ -70,6 +75,19 @@
             right: 60px;
             top: 30px;
         }
+
+        #advertisement,
+        #bestsells,
+        #stories,
+        #classbook,
+        #recommendbook {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        #copyright {
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -84,20 +102,22 @@
         <a href="#" id="a-registration">注册</a>
     </div>
     <div id="div2"></div>
-    <header style="border: 1px;">
+    <header>
         <h1 style="position: relative;text-align: center;">OnlineBookStore</h1>
     </header>
     <!-- /*广告*/ -->
-    <div id="div2"></div>
+    <div id="advertisement">
+        
+    </div>
     <!-- 热销图书展示区 -->
-    <div></div>
+    <div id="bestsells"></div>
     <!-- 小说 -->
-    <div></div>
+    <div id="stories"></div>
     <!-- 经典书籍 -->
-    <div></div>
+    <div id="classbook"></div>
     <!-- 带哥推荐图书 -->
-    <div></div>
-    <span>版权信息</span>
+    <div id="recommendbook"></div>
+    <footer id="copyright">版权所有，翻版必究。如有疑问请联系：sny666@email.swu.edu.cn</footer>
 </body>
 
 </html>
