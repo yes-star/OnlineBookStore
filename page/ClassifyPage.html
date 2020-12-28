@@ -1,49 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>图书类别</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>图书类别</title>
+	<style>
+		#Middle {
+			width: 960px;
+            margin: 0 auto;
+			border: 1px;
+			border-color: pink;
+			border-style: dashed;
+		}
+
+		ul {
+			list-style: none;
+			overflow: hidden;
+			/*注意要清除浮动*/
+		}
+
+		li a {
+
+			text-decoration: none;
+
+			width: 200px;
+			height: 50px;
+
+			text-align: center;
+			line-height: 50px;
+
+			color: black;
+		}
+
+		li {
+			text-decoration: none;
+			list-style: none;
+		}
+
+		table {
+			border: #0066FF 1px solid;
+		}
+
+		table td {
+			border: #0000FF 1px solid;
+			background-color: #00CCFF;
+		}
+
+		table td div {
+			background-color: #66FFCC;
+			display: none;
+		}
+
+		table td a:link,
+		table td a:visited(*) {
+			text-decoration: none;
+			color: #993300;
+		}
+
+		/* ul li {
+			float: left;
+			background-color: rgba(0, 0, 0, .3);
+		} */
+
+		.open {
+			display: block;
+		}
+
+		.close {
+			display: none;
+		}
+	</style>
 </head>
+
 <body>
-    <header>
-        <h1>OnlineBookStore</h1>
-    </header>
-    <div id="test2">
-        <table border=0>
-            <tr>
-                <th>首页</th>
-                <th>分类</th>
-                <th>购物车</th>
-                <th>登录</th>
-            </tr>
-        <table border="0">
-            <tr>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-                <td>#</td>
-            </tr>
-        </table>
-        </table>
-    </div>
+	<header>
+		<h1>OnlineBookStore</h1>
+	</header>
+	<div id="Middle">
+		<table>
+			<tr>
+				<td>
+					<a href="#" onclick="list2()">计算机与互联网<img class="arrow-img" src="images/arrow.png" alt="" /></a>
+					<div>
+						
+							<li class="subitem1"><a href="single.html">编程语言 </a></li>
+							<li class="subitem2"><a href="single.html">计算机网络</a></li>
+							<li class="subitem3"><a href="single.html">办公与计算机 </a></li>
+							<li class="subitem3"><a href="single.html">分类 </a></li>
+							<li class="subitem3"><a href="single.html">分类 </a></li>
+							<li class="subitem3"><a href="single.html">分类</a></li>
+						
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#" onclick="list2()">英语的各种教材<img class="arrow-img" src="images/arrow.png" alt="" /> </a>
+					<div>
+						<li class="subitem1"><a href="single.html">四级 </a></li>
+						<li class="subitem2"><a href="single.html">六级</a></li>
+						<li class="subitem3"><a href="single.html">八级 </a></li>
+						<li class="subitem3"><a href="single.html">分类 </a></li>
+						<li class="subitem3"><a href="single.html">分类 </a></li>
+						<li class="subitem3"><a href="single.html">分类 </a></li>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#" onclick="list2()">大分类<img class="arrow-img" src="images/arrow.png" alt="" /> </a>
+					<div>
+							<li class="subitem1"><a href="single.html">四级 </a></li>
+							<li class="subitem2"><a href="single.html">六级</a></li>
+							<li class="subitem3"><a href="single.html">八级 </a></li>
+							<li class="subitem3"><a href="single.html">分类 </a></li>
+							<li class="subitem3"><a href="single.html">分类 </a></li>
+							<li class="subitem3"><a href="single.html">分类 </a></li>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!--initiate accordion-->
+
+	<script>
+		function list2() {
+			var aNode = event.srcElement;
+			var tdNode = aNode.parentNode;
+			var divNode = tdNode.getElementsByTagName("div")[0];  //获取存入数组
+			/*/alert(divNode.nodeName)*/
+
+			var tabNode = document.getElementsByTagName("table")[0];
+			/* //获取存入数组*/
+
+			var divNodes = tabNode.getElementsByTagName("div");
+			for (var x = 0; x < divNodes.length; x++) {
+				if (divNodes[x] == divNode) {
+					if (divNode.className == "open") {
+						divNode.className = "close";
+					}
+					else {
+						divNode.className = "open";
+					}
+				}
+				else
+					divNodes[x].className = "close";
+			}
+		}
+	</script>
 </body>
+
 </html>

@@ -1,47 +1,5 @@
-/* #test1 {
-    background-color:  khaki;
-} */
-
 * {
     margin: 0;
     padding: 0;
 }
 
-#input1{
-    padding-right: 40px;
-}
-
-div {
-    border: 1px;
-    border-color: lightcoral;
-    border-style: dashed;
-    width: 100%;
-}
-
-tr {
-    width: 100%;
-}
-#td1 {
-    width: 15%;
-}
-
-#td2 {
-    width: 85%;
-}
-#find1 {
-    margin-left: 400px;
-}
-
-/* #div1 {
-    border: 1px;
-    border-color: lightcoral;
-    border-style: dashed;
-    width: 20%;
-}
-
-#div2 {
-    border: 1px;
-    border-color: lightcoral;
-    border-style: dashed;
-    width: 75%;
-} */

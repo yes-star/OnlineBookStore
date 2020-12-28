@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>购物车页面</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>购物车页面</title>
+	<style>
+		div {
+			border: 1px;
+			border-color: lightcoral;
+			border-style: dashed;
+			height: 400px;
+		}
+	</style>
 </head>
+
 <body>
-    <header>
-        <h1>OnlineBookStore</h1>
-    </header>
-    <div id="test1">
-        <table border=0>
-            <tr>
-                <th>首页</th>
-                <th>分类</th>
-                <th>购物车</th>
-                <th>登录</th>
-            </tr>
-        </table>
-        <table border="1">
-            <tr>
-                <button  onclick="change(t2)">#</button></td>
-                <td id="t2">##3</td>
-            </tr>
-            <tr>
-                <button id="t3" onclick="change(t3)">#</button>#</td>
-            </tr>
-            <tr>
-               <button id="t4" onclick="change()">#</button>#</td>
-            </tr>
-            <tr>
-                <td id="t5"><button  onclick="change(t1)">#</button>#</td>
-            </tr>
-        </table>
-    </div>
-    <script>
-        function change(x){
-            document.getElementById("t2").innerHTML = x+"被调用了";
-        }
-    </script>
+	<!-- 搜索栏 -->
+	<div class="row">
+		<div class="col-sm-12 search-parent">
+			<!-- 一张背景图的 -->
+			<img src="../images/top_logo.jpg" alt="">
+			<div class="search">
+				<input type="text" id="book_name" name="name" value="" />
+				<button type="button" class="btn btn-primary">搜索</button>
+			</div>
+		</div>
+	</div>
+	<!-- 底部版权 -->
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			版权所有
+		</div>
+	</div>
+	</div>
 </body>
 </html>

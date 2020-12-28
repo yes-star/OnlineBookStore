@@ -47,22 +47,29 @@
                 <label>邮箱号码：<input type="text" name="email_num" id=""></label><br>
                 <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="text" name="pwd" id=""></label><br>
                 <label>确认密码：<input type="text" name="re_in_pwd" id=""></label><br>
-                <label>验证码：<input type="text" placeholder="请在此输入验证码" id="inputCode" required="required" autofocus onchange="check()">
+                <label></label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
+                <input type="radio" name="gender" value="M" checked />男
+                <input type="radio" name="gender" value="F" />女</label>
+                <br />
+                <label>验证码：<input type="text" placeholder="请输入验证码(区分大小写)" id="inputCode" required="required" autofocus onchange="check()">
                 <canvas id="codeCanvas" width="80" height="20" onclick="createCode()"></canvas></label><br/>
-                <input type="submit" value="提交" />
                 <input type="submit" value="注册" id="sub-1" />
+                <input type="reset" value="重置" />
             </fieldset>
         </form>
     </div>
     <div></div>
     <script>
         var code;
-
+        var bgc;
+        var tgc;
         function createCode() {
             var canvas = document.getElementById("codeCanvas");
             var context = canvas.getContext("2d");
 
             code = "";
+            bgc = "#";
+            tgc = "#";
             var codeLength = 6;
 
             var letter = new Array(
@@ -77,16 +84,31 @@
                 code += letter[index];
             }
 
-            context.fillStyle = '#ccc';
+            var letter_1 = new Array(
+                '0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'
+            );
+            for (var i = 0; i < 3; i++) {
+                var index = Math.floor(Math.random() * letter_1.length);
+                bgc += letter_1[index];
+            }
+
+            for (var i = 0; i < 3; i++) {
+                var index = Math.floor(Math.random() * letter_1.length);
+                tgc += letter_1[index];
+            }
+            
+
+            context.fillStyle = bgc;
             context.fillRect(0, 0, 180, 50);
 
-            context.fillStyle = '#000';
+            context.fillStyle = tgc;
             context.font = "bold 14px 微软雅黑";
             context.textAlign = "center";
             context.textBaseline = "middle";
+            
             context.fillText(code, canvas.width / 2, canvas.height / 2);
         }
-
+ 
         function check() {
             var inputCode = document.getElementById("inputCode");
             var loCode = inputCode.value.toLowerCase();
