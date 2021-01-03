@@ -4,150 +4,254 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>图书类别</title>
+	<title>Document</title>
 	<style>
-		#Middle {
-			width: 960px;
-            margin: 0 auto;
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		div {
 			border: 1px;
 			border-color: pink;
 			border-style: dashed;
 		}
 
-		ul {
-			list-style: none;
-			overflow: hidden;
-			/*注意要清除浮动*/
-		}
-
-		li a {
-
-			text-decoration: none;
-
-			width: 200px;
-			height: 50px;
-
-			text-align: center;
-			line-height: 50px;
-
-			color: black;
-		}
-
 		li {
-			text-decoration: none;
+			text-align: center;
+			text-decoration: seashell;
 			list-style: none;
+			width: 235px;
+			display: inline-block;
+			margin-top: 10px;
+		}
+
+		p {
+			text-align: center;
+		}
+
+		button {
+			margin: 0 auto;
+		}
+
+		#shop_img {
+			position: absolute;
+			top: 6px;
+			right: 130px;
+			width: 76px;
+			height: 40px;
+		}
+
+		#shop_car {
+			text-align: unset;
+			position: absolute;
+			right: 10px;
+		}
+
+		#first {
+			width: 960px;
+			height: 200px;
+			background-color: pink;
+			margin: 0 auto;
+		}
+
+		#left-list {
+			width: 960px;
+			height: 50px;
+			display: block;
+			background-color: rgb(192, 255, 200);
+		}
+
+		#right-list {
+			width: 960px;
+			height: 600px;
+			display: block;
+			background-color: rgb(206, 192, 255);
+		}
+
+		#right-list div {
+			display: none;
 		}
 
 		table {
-			border: #0066FF 1px solid;
+			width: 960px;
 		}
 
-		table td {
-			border: #0000FF 1px solid;
-			background-color: #00CCFF;
+		tr {
+			border: 10px;
+			border-style: dashed;
+			border-color: pink;
 		}
 
-		table td div {
-			background-color: #66FFCC;
-			display: none;
+		td {
+			border: 10px;
+			border-left: 20px;
+			border-right: 20px;
+			border-style: dashed;
+			border-color: pink;
 		}
 
-		table td a:link,
-		table td a:visited(*) {
-			text-decoration: none;
-			color: #993300;
-		}
-
-		/* ul li {
-			float: left;
-			background-color: rgba(0, 0, 0, .3);
-		} */
-
-		.open {
+		button {
 			display: block;
+			background-repeat: no-repeat;
 		}
 
-		.close {
-			display: none;
+		img {
+			margin-left: 52px;
+			width: 160px;
+			height: 250px;
 		}
 	</style>
 </head>
 
 <body>
 	<header>
-		<h1>OnlineBookStore</h1>
+		<h1>
+			书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;架
+			<img id="shop_img" src="../images/top_shop_cur.jpg" alt="">
+			<a id="shop_car">购物车</a>
+		</h1>
 	</header>
-	<div id="Middle">
-		<table>
-			<tr>
-				<td>
-					<a href="#" onclick="list2()">计算机与互联网<img class="arrow-img" src="images/arrow.png" alt="" /></a>
-					<div>
-						
-							<li class="subitem1"><a href="single.html">编程语言 </a></li>
-							<li class="subitem2"><a href="single.html">计算机网络</a></li>
-							<li class="subitem3"><a href="single.html">办公与计算机 </a></li>
-							<li class="subitem3"><a href="single.html">分类 </a></li>
-							<li class="subitem3"><a href="single.html">分类 </a></li>
-							<li class="subitem3"><a href="single.html">分类</a></li>
-						
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#" onclick="list2()">英语的各种教材<img class="arrow-img" src="images/arrow.png" alt="" /> </a>
-					<div>
-						<li class="subitem1"><a href="single.html">四级 </a></li>
-						<li class="subitem2"><a href="single.html">六级</a></li>
-						<li class="subitem3"><a href="single.html">八级 </a></li>
-						<li class="subitem3"><a href="single.html">分类 </a></li>
-						<li class="subitem3"><a href="single.html">分类 </a></li>
-						<li class="subitem3"><a href="single.html">分类 </a></li>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#" onclick="list2()">大分类<img class="arrow-img" src="images/arrow.png" alt="" /> </a>
-					<div>
-							<li class="subitem1"><a href="single.html">四级 </a></li>
-							<li class="subitem2"><a href="single.html">六级</a></li>
-							<li class="subitem3"><a href="single.html">八级 </a></li>
-							<li class="subitem3"><a href="single.html">分类 </a></li>
-							<li class="subitem3"><a href="single.html">分类 </a></li>
-							<li class="subitem3"><a href="single.html">分类 </a></li>
-					</div>
-				</td>
-			</tr>
-		</table>
+	<div id="first">
+		<div id="left-list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</div>
+		<div id="right-list">
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_01.jpg" alt="#">
+							<p class="px">课本1</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_02.jpg" alt="#">
+							<p class="px">课本2</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_03.jpg" alt="#">
+							<p class="px">课本3</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_01.jpg" alt="#">
+							<p class="px">课本1</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_02.jpg" alt="#">
+							<p class="px">课本2</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_03.jpg" alt="#">
+							<p class="px">课本3</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_01.jpg" alt="#">
+							<p class="px">课本1</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_02.jpg" alt="#">
+							<p class="px">课本2</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_03.jpg" alt="#">
+							<p class="px">课本3</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_05.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
 	</div>
 
-	<!--initiate accordion-->
-
 	<script>
-		function list2() {
-			var aNode = event.srcElement;
-			var tdNode = aNode.parentNode;
-			var divNode = tdNode.getElementsByTagName("div")[0];  //获取存入数组
-			/*/alert(divNode.nodeName)*/
+		var lis = document.getElementsByTagName("li");
+		var right = document.getElementById("right-list");
+		var divs = right.getElementsByTagName("div");//四个页面
+		//获取高度 offsetHeight,
+		//获取宽度 ffsetWidth,
+		//定位上边距的数值 offsetTop
+		//定位左边距 offsetLeft
 
-			var tabNode = document.getElementsByTagName("table")[0];
-			/* //获取存入数组*/
-
-			var divNodes = tabNode.getElementsByTagName("div");
-			for (var x = 0; x < divNodes.length; x++) {
-				if (divNodes[x] == divNode) {
-					if (divNode.className == "open") {
-						divNode.className = "close";
-					}
-					else {
-						divNode.className = "open";
-					}
+		for (var i = 0; i < lis.length; i++) {
+			lis[i].index = i;//记录下标
+			//添加点击事件
+			lis[i].onclick = function () {
+				for (var j = 0; j < lis.length; j++) {
+					lis[j].className = "";
+					divs[j].style.display = "none";//全部隐藏
 				}
-				else
-					divNodes[x].className = "close";
+				// this.className = "active";
+				//显示对应的页面
+				divs[this.index].style.display = "block";
 			}
+		}
+		/////////////////////////////////////////////////////////////////////////////////////
+
+		var item01 = localStorage.item01;
+
+
+		//名字存储
+		var text1 = ['课本1', '课本2', '科本3', '课本3'];
+		localStorage.setItem('text1', JSON.stringify(text1));
+		text1 = JSON.parse(localStorage.getItem('text1'));
+
+		//价格存入数组
+		var price1 = ['20', '11', '23', '123', '321'];
+		localStorage.setItem('price1', JSON.stringify(price1));
+		price1 = JSON.parse(localStorage.getItem('price1'));
+
+		//存入数组
+		var arrList = ['北京', '上海', '广州', '深圳', '西安'];
+		localStorage.setItem('arrList', JSON.stringify(arrList));
+		arrList = JSON.parse(localStorage.getItem('arrList'));
+
+
+		//数量数组
+		var item = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+		localStorage.setItem('item', JSON.stringify(item));
+		item = JSON.parse(localStorage.getItem('item'));
+
+
+		function updateNum(n) {
+			item = JSON.parse(localStorage.getItem('item'));
+			temp = item[n - 1];
 		}
 	</script>
 </body>

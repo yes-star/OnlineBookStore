@@ -21,7 +21,7 @@
             border: 1px;
             border-color: lightcoral;
             border-style: dashed;
-            height: 400px;
+            height: 460px;
         }
 
         img {
@@ -44,9 +44,13 @@
             line-height: 100px;
         }
 
+        #wb {
+            width: 960px;
+            height: 2400px;
+        }
+
         #div1 {
             border-top: 0px solid orange;
-            position: fixed;
             height: 100px;
             width: 100%;
             background-color: rgba(111, 235, 208, 0.034);
@@ -86,6 +90,7 @@
         }
 
         #copyright {
+
             text-align: center;
         }
 
@@ -103,6 +108,44 @@
             bottom: 90px;
             right: 30px;
         }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+        }
+
+        .container {
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+            /* 一定要开启flex布局 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 缩小0.8，方便演示 */
+            /* transform: scale(0.8); */
+        }
+
+        .pic {
+            position: relative;
+            /* flex布局下当前元素自动缩放时占比为1，当前所有的pic元素占比均为一，等于所有元素大小保持一致的缩放 */
+            flex-shrink: 1;
+            flex-grow: 2;
+            /* 一定要开启 */
+            /* 要不然超出的图片会把pic图层撑开，失去最终效果 */
+            overflow: hidden;
+            transition: 1s;
+        }
+
+        .pic:hover {
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
     </style>
 </head>
 
@@ -110,13 +153,12 @@
     <div id="div1">
         <img src="../images/图片1.png" height="100px" width="100px" alt="">
         <a href="#">首页</a>
-        <a href="#">分类</a>
-        <a href="#">购物车</a>
-        <a href="#" id="a-loading">登录</a>
+        <a href="../page/ClassifyPage.html">分类</a>
+        <a href="../page/ShoppingPage.html">购物车</a>
+        <a href="../page/LoadingPage.html" id="a-loading">登录</a>
         <img id="black_img" src="../images/黑图.png" height="40px" width="3px" alt="">
-        <a href="#" id="a-registration">注册</a>
+        <a href="../page/RegistrationPage.html" id="a-registration">注册</a>
     </div>
-    <div id="div2"></div>
     <header>
         <h1 style="position: relative;text-align: center;">OnlineBookStore</h1>
     </header>
@@ -127,15 +169,15 @@
     <!-- 热销图书展示区 -->
     <div id="advertisement">
         <header style="text-align: center;text-shadow: 1px;">
-            <h2 style="color: orangered;">热销图书</h2>
+            <h2 style="color: orangered;">热销套书</h2>
         </header>
         <div id="tets_98">
-            <img id="lunbo_1" src="../images/book_01.jpg">
+            <img id="lunbo_1" width="960px" height="400px" src="../images/jdbook01.webp.jpg">
             <button id="buy_it">BUY IT!</button>
         </div>
     </div>
     <!-- 小说 -->
-    <div id="stories">
+    <!-- <div id="stories">
         <header style="text-align: center;text-shadow: 1px;">
             <h2 style="color: orangered;">小说</h2>
         </header>
@@ -144,9 +186,9 @@
             <img src="#" alt="2">
             <img src="#" alt="3">
         </div>
-    </div>
+    </div> -->
     <!-- 经典书籍 -->
-    <div id="classbook">
+    <!-- <div id="classbook">
         <header style="text-align: center;text-shadow: 1px;">
             <h2 style="color: orangered;">经典书籍</h2>
         </header>
@@ -155,16 +197,29 @@
             <img src="#" alt="2">
             <img src="#" alt="3">
         </div>
-    </div>
+    </div> -->
     <!-- 带哥推荐图书 -->
     <div id="recommendbook">
         <header style="text-align: center;text-shadow: 1px;">
             <h2 style="color: orangered;">带哥推荐图书</h2>
         </header>
-        <div>
-            <img src="#" alt="1">
-            <img src="#" alt="2">
-            <img src="#" alt="3">
+        <div class="container">
+            <div class="pic">
+                <img  width="200px" height="300px" src="1.jpg">
+                <div class="title">编</div>
+            </div class="pic">
+            <div class="pic">
+                <img  width="200px" height="300px" src="2.jpg">
+                <div class="title">译</div>
+            </div class="pic">
+            <div class="pic">
+                <img  width="200px" height="300px" src="3.jpg">
+                <div class="title">中</div>
+            </div class="pic">
+            <div  width="200px" height="300px" class="pic">
+                <img src="4.jpg">
+                <div class="title"></div>
+            </div class="pic">
         </div>
     </div>
     <footer id="copyright">版权所有，翻版必究。如有疑问请联系：sny666@email.swu.edu.cn</footer>
@@ -178,11 +233,11 @@
             }
             //获取img对象
             var img = document.getElementById("lunbo_1");
-            img.src = "../images/book_0" + index + ".jpg";
+            img.src = "../images/jdbook0" + index + ".webp.jpg";
         }
         //2.定义定时器
         setInterval(lunbo, 2000);
-        //*切记定时器里调用lunbo方法不能加(),setInterval(lunbo,2000);如果加()会执行lunbo（）方法，而导致定时器没用。
+
     </script>
 </body>
 

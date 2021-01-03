@@ -1,0 +1,46 @@
+img {
+    width: 215px;
+    height: 300px;
+}
+
+/* html {
+    font-size: 14px;
+} */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.container {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    /* 一定要开启flex布局 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 缩小0.8，方便演示 */
+    /* transform: scale(0.8); */
+}
+
+.pic {
+    position: relative;
+    /* flex布局下当前元素自动缩放时占比为1，当前所有的pic元素占比均为一，等于所有元素大小保持一致的缩放 */
+    flex-shrink: 1;
+    flex-grow: 2;
+    /* 一定要开启 */
+    /* 要不然超出的图片会把pic图层撑开，失去最终效果 */
+    overflow: hidden;
+    transition: 1s;
+}
+
+.pic:hover {
+    flex-shrink: 0;
+    flex-grow: 0;
+} 

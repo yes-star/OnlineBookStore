@@ -4,35 +4,250 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>购物车页面</title>
+	<title>Document</title>
 	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
 		div {
 			border: 1px;
-			border-color: lightcoral;
+			border-color: pink;
 			border-style: dashed;
-			height: 400px;
+		}
+
+		li {
+			text-align: center;
+			text-decoration: seashell;
+			list-style: none;
+			width: 235px;
+			display: inline-block;
+			margin-top: 10px;
+		}
+
+		p {
+			text-align: center;
+		}
+
+		button {
+			margin: 0 auto;
+		}
+
+		#shop_img {
+			position: absolute;
+			top: 6px;
+			right: 130px;
+			width: 76px;
+			height: 40px;
+		}
+
+		#shop_car {
+			text-align: unset;
+			position: absolute;
+			right: 10px;
+		}
+
+		#first {
+			width: 960px;
+			height: 200px;
+			background-color: pink;
+			margin: 0 auto;
+		}
+
+		#left-list {
+			width: 960px;
+			height: 50px;
+			display: block;
+			background-color: rgb(192, 255, 200);
+		}
+
+		#right-list {
+			width: 960px;
+			height: 600px;
+			display: block;
+			background-color: rgb(206, 192, 255);
+		}
+
+		#right-list div {
+			display: none;
+		}
+
+		table {
+			width: 960px;
+		}
+
+		tr {
+			border: 10px;
+			border-style: dashed;
+			border-color: pink;
+		}
+
+		td {
+			border: 10px;
+			border-left: 20px;
+			border-right: 20px;
+			border-style: dashed;
+			border-color: pink;
+		}
+
+		button {
+			display: block;
+			background-repeat: no-repeat;
+		}
+
+		img {
+			margin-left: 52px;
+			width: 160px;
+			height: 250px;
 		}
 	</style>
 </head>
 
 <body>
-	<!-- 搜索栏 -->
-	<div class="row">
-		<div class="col-sm-12 search-parent">
-			<!-- 一张背景图的 -->
-			<img src="../images/top_logo.jpg" alt="">
-			<div class="search">
-				<input type="text" id="book_name" name="name" value="" />
-				<button type="button" class="btn btn-primary">搜索</button>
+	<header>
+		<h1>
+			书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;架
+			<img id="shop_img" src="../images/top_shop_cur.jpg" alt="">
+			<a id="shop_car">购物车</a>
+		</h1>
+	</header>
+	<div id="first">
+		<div id="left-list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</div>
+		<div id="right-list">
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_01.jpg" alt="#">
+							<p class="px">课本1</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_02.jpg" alt="#">
+							<p class="px">课本2</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_03.jpg" alt="#">
+							<p class="px">课本3</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_01.jpg" alt="#">
+							<p class="px">课本1</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_02.jpg" alt="#">
+							<p class="px">课本2</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_03.jpg" alt="#">
+							<p class="px">课本3</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_01.jpg" alt="#">
+							<p class="px">课本1</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_02.jpg" alt="#">
+							<p class="px">课本2</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_03.jpg" alt="#">
+							<p class="px">课本3</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_05.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
-	<!-- 底部版权 -->
-	<div class="row">
-		<div class="col-sm-12 text-center">
-			版权所有
-		</div>
-	</div>
-	</div>
+
+	<script>
+		var lis = document.getElementsByTagName("li");
+		var right = document.getElementById("right-list");
+		var divs = right.getElementsByTagName("div");//四个页面
+		//获取高度 offsetHeight,
+		//获取宽度 ffsetWidth,
+		//定位上边距的数值 offsetTop
+		//定位左边距 offsetLeft
+
+		for (var i = 0; i < lis.length; i++) {
+			lis[i].index = i;//记录下标
+			//添加点击事件
+			lis[i].onclick = function () {
+				for (var j = 0; j < lis.length; j++) {
+					lis[j].className = "";
+					divs[j].style.display = "none";//全部隐藏
+				}
+				// this.className = "active";
+				//显示对应的页面
+				divs[this.index].style.display = "block";
+			}
+		}
+		/////////////////////////////////////////////////////////////////////////////////////
+
+		var item01 = localStorage.item01;
+
+
+		//名字存储
+		var text1 = ['课本1', '课本2', '科本3', '课本3'];
+		localStorage.setItem('text1', JSON.stringify(text1));
+		text1 = JSON.parse(localStorage.getItem('text1'));
+
+		//价格存入数组
+		var price1 = ['20', '11', '23', '123', '321'];
+		localStorage.setItem('price1', JSON.stringify(price1));
+		price1 = JSON.parse(localStorage.getItem('price1'));
+
+		//数量数组
+		var item = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+		localStorage.setItem('item', JSON.stringify(item));
+		item = JSON.parse(localStorage.getItem('item'));
+
+
+		function updateNum(n) {
+			item = JSON.parse(localStorage.getItem('item'));
+			temp = item[n - 1];
+		}
+	</script>
 </body>
+
 </html>
