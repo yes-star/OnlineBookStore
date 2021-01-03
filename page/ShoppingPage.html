@@ -3,251 +3,270 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
-		* {
-			margin: 0;
-			padding: 0;
+		.wrap {
+			width: 800px;
+			margin: 0 auto;
 		}
 
-		h1 {
-			text-align: center;
+		.box,
+		#box {
+			width: 800px;
+			border: 2px solid green;
+			position: relative;
+			top: 0;
+			padding: 10px;
 		}
 
-		div {
-			border: 1px;
-			border-color: pink;
-			border-style: dashed;
-		}
-
-		li {
-			text-align: center;
-			text-decoration: seashell;
-			list-style: none;
-			width: 235px;
+		.check,
+		p,
+		span,
+		.num,
+		.add,
+		.minus {
+			/*    position: absolute;
+            left: 0;
+            top: 0;*/
 			display: inline-block;
-			margin-top: 10px;
-		}
-
-		p {
-			text-align: center;
-		}
-
-		button {
-			margin: 0 auto;
-		}
-
-		#shop_img {
-			position: absolute;
-			top: 6px;
-			right: 130px;
-			width: 76px;
-			height: 40px;
-		}
-
-		#shop_car {
-			text-align: unset;
-			position: absolute;
-			right: 10px;
-		}
-
-		#first {
-			width: 960px;
-			height: 200px;
-			background-color: pink;
-			margin: 0 auto;
-		}
-
-		#left-list {
-			width: 960px;
-			height: 50px;
-			display: block;
-			background-color: rgb(192, 255, 200);
-		}
-
-		#right-list {
-			width: 960px;
-			height: 600px;
-			display: block;
-			background-color: rgb(206, 192, 255);
-		}
-
-		#right-list div {
-			display: none;
-		}
-
-		table {
-			width: 960px;
-		}
-
-		tr {
-			border: 10px;
-			border-style: dashed;
-			border-color: pink;
-		}
-
-		td {
-			border: 10px;
-			border-left: 20px;
-			border-right: 20px;
-			border-style: dashed;
-			border-color: pink;
-		}
-
-		button {
-			display: block;
-			background-repeat: no-repeat;
 		}
 
 		img {
-			margin-left: 52px;
-			width: 160px;
-			height: 250px;
+			width: 82px;
+			height: 82px;
+			display: inline-block;
+		}
+
+		p {
+			margin: 0 40px;
+			color: #999999;
+		}
+
+		.price {
+			vertical-align: middle;
+			margin: 0 40px;
+			font-size: 20px;
+			color: red;
+		}
+
+		.num {
+			width: 20px;
+			height: 20px;
+			border: 1px solid;
+			line-height: 20px;
+			text-align: center;
+			margin-left: 40px;
+		}
+
+		#selecteAll,
+		#dele,
+		#move,
+		#product,
+		#proNum,
+		#textP,
+		#totalPri {
+			display: inline-block;
+			color: #666666;
+			font-size: 16px;
+			margin: 15px;
+		}
+
+		#proNum,
+		#totalPri,
+		#textP {
+			margin: 15px 0px;
+		}
+
+		#product {
+			margin-right: 0px;
+		}
+
+		#accounts {
+			display: block;
+			float: right;
+			margin-top: 40px;
+		}
+
+		#box::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		#over {
+			margin-left: 30px;
 		}
 	</style>
 </head>
 
 <body>
-	<header>
-		<h1>
-			书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;架
-			<img id="shop_img" src="../images/top_shop_cur.jpg" alt="">
-			<a id="shop_car">购物车</a>
-		</h1>
-	</header>
-	<div id="first">
-		<div id="left-list">
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
-		</div>
-		<div id="right-list">
-			<div>
-				<table border="10px">
-					<tr>
-						<td><img src="../images/book_01.jpg" alt="#">
-							<p class="px">课本1</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
-						</td>
-						<td><img src="../images/book_02.jpg" alt="#">
-							<p class="px">课本2</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
-						</td>
-						<td><img src="../images/book_03.jpg" alt="#">
-							<p class="px">课本3</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
-						</td>
-					</tr>
-					<tr>
-						<td><img src="../images/book_01.jpg" alt="#">
-							<p class="px">课本1</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
-						</td>
-						<td><img src="../images/book_02.jpg" alt="#">
-							<p class="px">课本2</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
-						</td>
-						<td><img src="../images/book_03.jpg" alt="#">
-							<p class="px">课本3</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
-						</td>
-					</tr>
-					<tr>
-						<td><img src="../images/book_01.jpg" alt="#">
-							<p class="px">课本1</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
-						</td>
-						<td><img src="../images/book_02.jpg" alt="#">
-							<p class="px">课本2</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
-						</td>
-						<td><img src="../images/book_03.jpg" alt="#">
-							<p class="px">课本3</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<table border="10px">
-					<tr>
-						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<table border="10px">
-					<tr>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<table border="10px">
-					<tr>
-						<td><img src="../images/book_05.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
-					</tr>
-				</table>
-			</div>
+	<div class="wrap">
+		<div id="box">
+			<input type="checkbox" id="selecteAll">全选
+			<span id="dele">删除选中商品</span>
+			<span id="move">移动到我的关注</span>
+			<span id="product">一共选中</span>
+			<span id="proNum">件商品</span>
+			<span id="textP">,总价格为(不含运费)$</span>
+			<span id="totalPri">元</span>
+			<input type="button" value="结算" id="over">
 		</div>
 	</div>
-
-	<script>
-		var lis = document.getElementsByTagName("li");
-		var right = document.getElementById("right-list");
-		var divs = right.getElementsByTagName("div");//四个页面
-		//获取高度 offsetHeight,
-		//获取宽度 ffsetWidth,
-		//定位上边距的数值 offsetTop
-		//定位左边距 offsetLeft
-
-		for (var i = 0; i < lis.length; i++) {
-			lis[i].index = i;//记录下标
-			//添加点击事件
-			lis[i].onclick = function () {
-				for (var j = 0; j < lis.length; j++) {
-					lis[j].className = "";
-					divs[j].style.display = "none";//全部隐藏
-				}
-				// this.className = "active";
-				//显示对应的页面
-				divs[this.index].style.display = "block";
+</body>
+<script>
+	//获取变量
+	var wrap = document.querySelector(".wrap");
+	var box = document.querySelector(".box");
+	var img = document.querySelector("img");
+	text1 = JSON.parse(localStorage.getItem('text1'));
+	price1 = JSON.parse(localStorage.getItem('price1'));
+	item = JSON.parse(localStorage.getItem('item'));
+	// for循环生成下面产品
+	for (var i = 0; i <= item.length; i++) {
+		if (item[i] != 0)
+			list(i);
+	}
+	// 创建列表函数
+	function list(i) {
+		var count = 1;
+		// 创建大盒子
+		var box = document.createElement("div");
+		box.className = "box";
+		// 创建勾选
+		var check = document.createElement("input");
+		check.className = "check";
+		// 为选框设置点击事件
+		check.onclick = function () {
+			if (check.checked == true) {
+				count = 1;
+				num.innerHTML = count;
+			}
+			else {
+				count = 0;
+				num.innerHTML = count;
 			}
 		}
-		/////////////////////////////////////////////////////////////////////////////////////
-
-		var item01 = localStorage.item01;
-
-
-		//名字存储
-		var text1 = ['课本1', '课本2', '科本3', '课本3'];
-		localStorage.setItem('text1', JSON.stringify(text1));
-		text1 = JSON.parse(localStorage.getItem('text1'));
-
-		//价格存入数组
-		var price1 = ['20', '11', '23', '123', '321'];
-		localStorage.setItem('price1', JSON.stringify(price1));
-		price1 = JSON.parse(localStorage.getItem('price1'));
-
-		//数量数组
-		var item = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-		localStorage.setItem('item', JSON.stringify(item));
-		item = JSON.parse(localStorage.getItem('item'));
-
-
-		function updateNum(n) {
-			item = JSON.parse(localStorage.getItem('item'));
-			temp = item[n - 1];
+		// 设置type类型
+		check.setAttribute("type", "checkbox");
+		// 创建图片
+		var imgs = document.createElement("img");
+		imgs.src = "../images/book_0" + i + ".jpg";                       //../images/book_01.jpg
+		// 创建文本
+		var text = document.createElement("p");
+		text.innerHTML = text1[i - 1];                        //dsfdfsf
+		// 创建价格
+		var price = document.createElement("span");
+		price.innerHTML = price1[i - 1];                  //
+		price.className = "price";
+		// 创建数量
+		var num = document.createElement("div");
+		num.innerHTML = count;
+		num.className = "num";
+		// 创建+按钮
+		var add = document.createElement("input");
+		add.setAttribute("type", "button");
+		add.className = "add";
+		add.value = "+";
+		// 在每次生成的box中调用add点击事件
+		add.onclick = function () {
+			// 当点击add时check会选中
+			check.checked = true;
+			count += 1;
+			console.log(count);
+			num.innerHTML = count;
 		}
-	</script>
-</body>
+		// 创建-按钮
+		var minus = document.createElement("input");
+		minus.setAttribute("type", "button");
+		minus.className = "minus"
+		minus.value = "-";
+		// 在每次生成的box中调用minus的点击事件
+		minus.onclick = function () {
+			if (count > 0) {
+				count--;
+				console.log(count);
+				num.innerHTML = count;
+
+			} else {
+				check.checked = false;
+				count = 0;
+				num.innerHTML = count;
+				console.log(count);
+			}
+		}
+		var delb = document.createElement("input");
+		delb.setAttribute("type", "button");
+		delb.className = "delbuttom";
+		delb.value = "X";
+
+		delb.onclick = function () {
+			var tr = this.parentNode;
+			var tbody = tr.parentNode;
+			tbody.removeChild(box);
+			total();
+		}
+		// 将所有创建标签写入wrap中
+		wrap.appendChild(box);
+		box.appendChild(check);
+		box.appendChild(imgs);
+		box.appendChild(text);
+		box.appendChild(price);
+		box.appendChild(add);
+		box.appendChild(num);
+		box.appendChild(minus);
+		box.appendChild(delb);
+	}
+	// 结算行设置
+	// 获取变量
+	var chek = document.querySelectorAll(".check");
+	var number = document.querySelectorAll(".num");
+	var pri = document.querySelectorAll(".price");
+	// 点击全选
+	selecteAll.onclick = function () {
+		if (selecteAll.checked) {
+			for (var i = 0; i < chek.length; i++) {
+				var count = 0;
+				chek[i].checked = true;
+				count = 1;
+				number[i].innerHTML = count;
+			}
+		}
+	}
+	// 点击删除
+	dele.onclick = function () {
+		for (var i = 0; i < chek.length; i++) {
+			var count = 0
+			number[i].innerHTML = count;
+			chek[i].checked = false;
+			selecteAll.checked = false;
+		}
+	}
+
+	function del(obj) {
+		var tr = obj.parentNode.parentNode;
+		var tbody = tr.parentNode;
+		tbody.removeChild(tr);
+		total();
+	}
+	// 点击结算
+	over.onclick = function () {
+		var proNums = 0;
+		var total = 0;
+		console.log(111);
+		for (var i = 0; i < 5; i++) {
+			// console.log(111);
+			console.log(chek[i]);
+			if (chek[i].checked) {
+				// 数量
+				console.log(111);
+				console.log(number[i].innerHTML);
+				proNums += Number(number[i].innerHTML);
+				total += Number(pri[i].innerHTML) * Number(number[i].innerHTML);
+			}
+		}
+		proNum.innerHTML = proNums + "件商品";
+		totalPri.innerHTML = total + "元";
+	}
+</script>
 
 </html>

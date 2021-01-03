@@ -108,44 +108,6 @@
             bottom: 90px;
             right: 30px;
         }
-
-        body {
-            width: 100vw;
-            height: 100vh;
-            background-color: var(--background-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
-        }
-
-        .container {
-            width: 600px;
-            height: 300px;
-            overflow: hidden;
-            /* 一定要开启flex布局 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* 缩小0.8，方便演示 */
-            /* transform: scale(0.8); */
-        }
-
-        .pic {
-            position: relative;
-            /* flex布局下当前元素自动缩放时占比为1，当前所有的pic元素占比均为一，等于所有元素大小保持一致的缩放 */
-            flex-shrink: 1;
-            flex-grow: 2;
-            /* 一定要开启 */
-            /* 要不然超出的图片会把pic图层撑开，失去最终效果 */
-            overflow: hidden;
-            transition: 1s;
-        }
-
-        .pic:hover {
-            flex-shrink: 0;
-            flex-grow: 0;
-        }
     </style>
 </head>
 
@@ -203,23 +165,10 @@
         <header style="text-align: center;text-shadow: 1px;">
             <h2 style="color: orangered;">带哥推荐图书</h2>
         </header>
-        <div class="container">
-            <div class="pic">
-                <img  width="200px" height="300px" src="1.jpg">
-                <div class="title">编</div>
-            </div class="pic">
-            <div class="pic">
-                <img  width="200px" height="300px" src="2.jpg">
-                <div class="title">译</div>
-            </div class="pic">
-            <div class="pic">
-                <img  width="200px" height="300px" src="3.jpg">
-                <div class="title">中</div>
-            </div class="pic">
-            <div  width="200px" height="300px" class="pic">
-                <img src="4.jpg">
-                <div class="title"></div>
-            </div class="pic">
+        <div>
+            <img src="#" alt="1">
+            <img src="#" alt="2">
+            <img src="#" alt="3">
         </div>
     </div>
     <footer id="copyright">版权所有，翻版必究。如有疑问请联系：sny666@email.swu.edu.cn</footer>
@@ -237,7 +186,7 @@
         }
         //2.定义定时器
         setInterval(lunbo, 2000);
-
+        //*切记定时器里调用lunbo方法不能加(),setInterval(lunbo,2000);如果加()会执行lunbo（）方法，而导致定时器没用。
     </script>
 </body>
 
