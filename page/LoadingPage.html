@@ -6,26 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
     <link rel="stylesheet" href="../CSS/1.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Open Sans Light";
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            background-image: linear-gradient(to bottom right, rgb(114, 135, 254), rgb(130, 88, 186));
+        }
+
+        form {
+            border: 0px;
+        }
+
+        #one {
+            background-color: white;
+            width: 400px;
+            height: 500px;
+            position: relative;
+            border-radius: 16px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #father {
+            height: 100%;
+            border-radius: 16px;
+        }
+
+        #log {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        #son1 {
+            background-color: fff;
+            width: 250px;
+            height: 500px;
+            border-radius: 14px;
+            padding: 0 60px;
+            position: relative;
+        }
+
+        .inp {
+            border: 0;
+            border-bottom: 1px solid rgb(128, 125, 125);
+        }
+
+        #btn1,
+        #btn2 {
+            margin-top: 6px;
+            border-radius: 10px;
+        }
+
+        #btn1 {
+            border: 0;
+            background-color: rgb(130, 88, 186);
+            margin-left: 70px;
+            font-size: 18px;
+        }
+
+        #btn2 {
+            border: 0;
+            background-color: rgb(130, 88, 186);
+            margin-left: 40px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <h1>OnlineBookStore</h1>
-    </header>
-    <div>
-        <br />
-        <form method="POST" action="#">
-            <fieldset>
-                <label for="username">用户名:</label>
-                <input type="text" width="40%" name="username" />
-                <br />
-                <label for="pwd">密&nbsp;&nbsp;&nbsp;码:</label>
-                <input type="password" name="pwd" id="input1"/>
-                <br />
-                <input type="submit" value="登录" />
-                <input type="reset" value="重置" />
-            </fieldset>
-        </form>
+    </header> -->
+    <div id="father">
+        <div id="one">
+            <br />
+            <div id="log">登录</div>
+            <div id="son1">
+                <form method="POST" action="#">
+                    <fieldset>
+                        <label style="margin-left: 14px" for="username">用户名:</label>
+                        <input class="inp" type="text" width="40%" name="username" />
+                        <br />
+                        <label style="margin-left: 14px" for="pwd">密&nbsp;&nbsp;&nbsp;码:</label>
+                        <input class="inp" type="password" name="pwd" id="input1" />
+                        <br />
+                        <input id="btn1" type="submit" value="登录" />
+                        <input id="btn2" type="reset" value="重置" />
+                    </fieldset>
+                </form>
+                <div id="zhu">
+                    没有账户？<a href="../page/RegistrationPage.html">注册</a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

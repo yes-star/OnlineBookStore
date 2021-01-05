@@ -45,7 +45,8 @@
         .price {
             vertical-align: middle;
             margin: 0 40px;
-            font-size: 20px;
+            font-size: 
+            0px;
             color: red;
         }
 
@@ -100,18 +101,18 @@
 </head>
 
 <body>
-    <div class="wrap">
-        <div id="box">
-            <input type="checkbox" id="selecteAll">全选
-            <span id="dele">删除选中商品</span>
-            <span id="move">移动到我的关注</span>
-            <span id="product">一共选中</span>
-            <span id="proNum">件商品</span>
-            <span id="textP">,总价格为(不含运费)$</span>
-            <span id="totalPri">元</span>
-            <input type="button" value="结算" id="over">
+        <div class="wrap">
+            <div id="box">
+                <input type="checkbox" id="selecteAll">全选
+                <span id="dele">清空购物车</span>
+                <span id="move">移动到我的关注</span>
+                <span id="product">一共选中</span>
+                <span id="proNum">件商品</span>
+                <span id="textP">,总价格为(不含运费)$</span>
+                <span id="totalPri">元</span>
+                <input type="button" value="结算" id="over">
+            </div> 
         </div>
-    </div>
 </body>
 <script>
     //获取变量
@@ -122,13 +123,15 @@
     price1 = JSON.parse(localStorage.getItem('price1'));
     item = JSON.parse(localStorage.getItem('item'));
     // for循环生成下面产品
-    for (var i = 0; i <= item.length; i++) {
-        if (item[i] != 0)
+    for (var i = 0; i < item.length; i++) {
+        if (item[i] != 0) {
             list(i);
+            // alert(i);
+        }
     }
     // 创建列表函数
     function list(i) {
-        var count = 1;
+        var count = 0;
         // 创建大盒子
         var box = document.createElement("div");
         box.className = "box";
@@ -149,17 +152,19 @@
         // 设置type类型
         check.setAttribute("type", "checkbox");
         // 创建图片
+        var n = i + 1;
         var imgs = document.createElement("img");
-        imgs.src = "../images/book_0" + i + ".jpg";                       //../images/book_01.jpg
+        imgs.src = "../images/book_0" + n + ".jpg";                       //../images/book_01.jpg
         // 创建文本
         var text = document.createElement("p");
-        text.innerHTML = text1[i-1];                        //dsfdfsf
+        text.innerHTML = text1[i];                        //dsfdfsf
         // 创建价格
         var price = document.createElement("span");
-        price.innerHTML = price1[i-1];                  //
+        price.innerHTML = "20.00";                  //
         price.className = "price";
         // 创建数量
         var num = document.createElement("div");
+        count = item[i];
         num.innerHTML = count;
         num.className = "num";
         // 创建+按钮
@@ -211,8 +216,8 @@
         box.appendChild(imgs);
         box.appendChild(text);
         box.appendChild(price);
-        box.appendChild(add);
         box.appendChild(num);
+        box.appendChild(add);
         box.appendChild(minus);
         box.appendChild(delb);
     }
@@ -239,6 +244,8 @@
             number[i].innerHTML = count;
             chek[i].checked = false;
             selecteAll.checked = false;
+            localStorage.clear();
+            window.location.reload();
         }
     }
 
@@ -253,7 +260,7 @@
         var proNums = 0;
         var total = 0;
         console.log(111);
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 1; i++) {                              //修改这可以解决18 改成xxx.length
             // console.log(111);
             console.log(chek[i]);
             if (chek[i].checked) {

@@ -1,19 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注册页面</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Open Sans Light";
+        }
+
         div {
-            border: 1px;
+            border: 0px;
             border-color: lightcoral;
             border-style: dashed;
         }
 
-        legend {
-            text-align: center;
+        html {
+            height: 80%;
         }
+
+        body {
+            height: 100%;
+            background-image: linear-gradient(to bottom right, rgb(114, 135, 254), rgb(130, 88, 186));
+        }
+
+        form {
+            border: 0px;
+        }
+
+        #one {
+            background-color: white;
+            width: 400px;
+            height: 500px;
+            position: relative;
+            border-radius: 16px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #father {
+            height: 100%;
+            border-radius: 16px;
+        }
+
+        #log {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        #son1 {
+            background-color: fff;
+            width: 250px;
+            height: 500px;
+            border-radius: 14px;
+            padding: 0 60px;
+            position: relative;
+        }
+
+        #btn1,
+        #btn2 {
+            margin-top: 6px;
+            border-radius: 10px;
+        }
+
+        #btn1 {
+            border: 0;
+            background-color: rgb(130, 88, 186);
+            margin-left: 70px;
+            font-size: 18px;
+        }
+
+        #btn2 {
+            border: 0;
+            background-color: rgb(130, 88, 186);
+            margin-left: 40px;
+            font-size: 18px;
+        }
+
         #but-1 {
             text-align: center;
             text-size-adjust: 28px;
@@ -23,7 +92,7 @@
             width: 400px;
             margin: 0 auto;
         }
-        
+
         #sub-1 {
             text-align: center;
         }
@@ -33,30 +102,40 @@
         }
     </style>
 </head>
+
 <body onload="createCode()">
     <div>
         <a href="../page/FirstPage.html" runat="server" id="but-1">
-        <input id="Button1" type="button" value="返回首页" /></a>
+            <input id="Button1" type="button" value="返回首页" /></a>
     </div>
-    <div>
-        <form action="post" action="url" id="form-1">
-            <fieldset>
-                <legend>用户注册</legend>
-                <label>用户昵称：<input type="text" name="name"></label><br>
-                <label>手机号码：<input type="text" name="phone_num"></label><br>
-                <label>邮箱号码：<input type="text" name="email_num" id=""></label><br>
-                <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="text" name="pwd" id=""></label><br>
-                <label>确认密码：<input type="text" name="re_in_pwd" id=""></label><br>
-                <label></label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
-                <input type="radio" name="gender" value="M" checked />男
-                <input type="radio" name="gender" value="F" />女</label>
-                <br />
-                <label>验证码：<input type="text" placeholder="请输入验证码(区分大小写)" id="inputCode" required="required" autofocus onchange="check()">
-                <canvas id="codeCanvas" width="80" height="20" onclick="createCode()"></canvas></label><br/>
-                <input type="submit" value="注册" id="sub-1" />
-                <input type="reset" value="重置" />
-            </fieldset>
-        </form>
+    <div id="father">
+        <div id="one">
+            <br />
+            <div id="log">登录</div>
+            <div id="son1">
+                <form  style="margin-left: 0px;" action="post" action="url" id="form-1">
+
+                        <label>用户昵称：<input type="text" name="name" required="text"></label><br>
+                        <label>手机号码：<input type="text" name="phone_num" required="tel"></label><br>
+                        <label>邮箱号码：<input type="text" name="email_num" id="" required="email"></label><br>
+                        <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="pwd" id="a"
+                                required="password"></label><br>
+                        <label>确认密码：<input type="password" name="re_in_pwd" id="b" required="password"
+                                onclick="dui()"></label><br>
+                        <label></label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
+                        <input type="radio" name="gender" value="M" checked />男
+                        <input type="radio" name="gender" value="F" />女</label>
+                        <br />
+                        <label>验证码：<input type="text" placeholder="请输入验证码(区分大小写)" id="inputCode" required="required"
+                                autofocus onchange="check()">
+                            <canvas id="codeCanvas" width="80" height="20"
+                                onclick="createCode()"></canvas></label><br />
+                        <input id="btn1" type="submit" value="注册" id="sub-1" />
+                        <input id="btn2" type="reset" value="重置" />
+                </form>
+            </div>
+        </div>
+    </div>
     </div>
     <div></div>
     <script>
@@ -85,7 +164,7 @@
             }
 
             var letter_1 = new Array(
-                '0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
             );
             for (var i = 0; i < 3; i++) {
                 var index = Math.floor(Math.random() * letter_1.length);
@@ -96,7 +175,7 @@
                 var index = Math.floor(Math.random() * letter_1.length);
                 tgc += letter_1[index];
             }
-            
+
 
             context.fillStyle = bgc;
             context.fillRect(0, 0, 180, 50);
@@ -105,10 +184,10 @@
             context.font = "bold 14px 微软雅黑";
             context.textAlign = "center";
             context.textBaseline = "middle";
-            
+
             context.fillText(code, canvas.width / 2, canvas.height / 2);
         }
- 
+
         function check() {
             var inputCode = document.getElementById("inputCode");
             var loCode = inputCode.value.toLowerCase();
@@ -121,6 +200,17 @@
                 alert("验证码输入正确！即将提交表单！！");
             }
         }
+
+        function dui() {
+            var a = document.getElementById("a");
+            var sd = a.value.toLowerCase();
+            var b = document.getElementById("b");
+            var sb = b.value.toLowerCase();
+            if (sd != sb) {
+                alert("两次输入的密码不一样！");
+            }
+        }
     </script>
 </body>
+
 </html>

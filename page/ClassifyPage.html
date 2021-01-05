@@ -11,12 +11,27 @@
 			padding: 0;
 		}
 
+		html {
+			height: 100%;
+		}
+
+		@keyframes activef {
+			0% {background-color: #d9afd9;}
+			50% {background-color: #96deda;}
+			100% {background-color: #d9afd9;}
+		}
+
+		body {
+            animation: activef 7s infinite;
+        }
+
 		h1 {
+
 			text-align: center;
 		}
 
 		div {
-			border: 1px;
+			border: 0px;
 			border-color: pink;
 			border-style: dashed;
 		}
@@ -25,9 +40,8 @@
 			text-align: center;
 			text-decoration: seashell;
 			list-style: none;
-			width: 235px;
+			width: 236px;
 			display: inline-block;
-			margin-top: 10px;
 		}
 
 		p {
@@ -37,6 +51,20 @@
 		button {
 			margin: 0 auto;
 		}
+
+		@keyframes activef1 {
+			0% {background-color: #e14fad;}
+			50% {background-color: #f9d423;}
+			100% {background-color: #e14fad;}
+		}
+		
+		.active {
+            /* background-image: linear-gradient(to bottom right, #d9afd9, #d9afd9); */
+			color: white;
+			animation: activef1 7s infinite;
+            border-bottom: 3px solid red;
+            font-size: 38px;
+        }
 
 		#shop_img {
 			position: absolute;
@@ -66,11 +94,17 @@
 			background-color: rgb(192, 255, 200);
 		}
 
+		@keyframes myframe {
+			0% {background-color:  rgb(206, 192, 255);}
+			50% {background-color:rgba(57, 209, 90, 0.795);}
+			100% {background-color:  rgb(206, 192, 255);}
+		}
+
 		#right-list {
 			width: 960px;
-			height: 600px;
+			height: 1040px;
 			display: block;
-			background-color: rgb(206, 192, 255);
+			animation: myframe 7s infinite;
 		}
 
 		#right-list div {
@@ -98,6 +132,7 @@
 		button {
 			display: block;
 			background-repeat: no-repeat;
+			border-radius: 50px;
 		}
 
 		img {
@@ -105,6 +140,8 @@
 			width: 160px;
 			height: 250px;
 		}
+
+		
 	</style>
 </head>
 
@@ -118,12 +155,150 @@
 	</header>
 	<div id="first">
 		<div id="left-list">
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
+			<li class="active">书架1</li>
+			<li>书架2</li>
+			<li>书架3</li>
+			<li>书架4</li>
 		</div>
 		<div id="right-list">
+			<div style="display:block">
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_01.jpg" alt="#">
+							<p class="px">课本1</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_02.jpg" alt="#">
+							<p class="px">课本2</p>
+							<p>价格：<span>11</span></p><button onclick="updateNum(2)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_03.jpg" alt="#">
+							<p class="px">课本3</p>
+							<p>价格：<span>23</span></p><button onclick="updateNum(3)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_04.jpg" alt="#">
+							<p class="px">课本4</p>
+							<p>价格：<span>123</span></p><button onclick="updateNum(4)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_05.jpg" alt="#">
+							<p class="px">课本5</p>
+							<p>价格：<span>321</span></p><button onclick="updateNum(5)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_06.jpg" alt="#">
+							<p class="px">课本6</p>
+							<p>价格：<span>43</span></p><button onclick="updateNum(6)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_07.jpg" alt="#">
+							<p class="px">课本7</p>
+							<p>价格：<span>14</span></p><button onclick="updateNum(7)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_08.jpg" alt="#">
+							<p class="px">课本8</p>
+							<p>价格：<span>11</span></p><button onclick="updateNum(8)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_09.jpg" alt="#">
+							<p class="px">课本9</p>
+							<p>价格：<span>43</span></p><button onclick="updateNum(9)">加入购物车</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_04.jpg" alt="#">
+							<p class="px">课本4</p>
+							<p>价格：<span>123</span></p><button onclick="updateNum(4)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_05.jpg" alt="#">
+							<p class="px">课本5</p>
+							<p>价格：<span>321</span></p><button onclick="updateNum(5)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_06.jpg" alt="#">
+							<p class="px">课本6</p>
+							<p>价格：<span>43</span></p><button onclick="updateNum(6)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_07.jpg" alt="#">
+							<p class="px">课本7</p>
+							<p>价格：<span>14</span></p><button onclick="updateNum(7)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_08.jpg" alt="#">
+							<p class="px">课本8</p>
+							<p>价格：<span>11</span></p><button onclick="updateNum(8)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_09.jpg" alt="#">
+							<p class="px">课本9</p>
+							<p>价格：<span>43</span></p><button onclick="updateNum(9)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_01.jpg" alt="#">
+							<p class="px">课本1</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_02.jpg" alt="#">
+							<p class="px">课本2</p>
+							<p>价格：<span>11</span></p><button onclick="updateNum(2)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_03.jpg" alt="#">
+							<p class="px">课本3</p>
+							<p>价格：<span>23</span></p><button onclick="updateNum(3)">加入购物车</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table border="10px">
+					<tr>
+						<td><img src="../images/book_07.jpg" alt="#">
+							<p class="px">课本7</p>
+							<p>价格：<span>14</span></p><button onclick="updateNum(7)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_08.jpg" alt="#">
+							<p class="px">课本8</p>
+							<p>价格：<span>11</span></p><button onclick="updateNum(8)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_09.jpg" alt="#">
+							<p class="px">课本9</p>
+							<p>价格：<span>43</span></p><button onclick="updateNum(9)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_01.jpg" alt="#">
+							<p class="px">课本1</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_02.jpg" alt="#">
+							<p class="px">课本2</p>
+							<p>价格：<span>11</span></p><button onclick="updateNum(2)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_03.jpg" alt="#">
+							<p class="px">课本3</p>
+							<p>价格：<span>23</span></p><button onclick="updateNum(3)">加入购物车</button>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="../images/book_04.jpg" alt="#">
+							<p class="px">课本4</p>
+							<p>价格：<span>123</span></p><button onclick="updateNum(4)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_05.jpg" alt="#">
+							<p class="px">课本5</p>
+							<p>价格：<span>321</span></p><button onclick="updateNum(5)">加入购物车</button>
+						</td>
+						<td><img src="../images/book_06.jpg" alt="#">
+							<p class="px">课本6</p>
+							<p>价格：<span>43</span></p><button onclick="updateNum(6)">加入购物车</button>
+						</td>
+					</tr>
+				</table>
+			</div>
 			<div>
 				<table border="10px">
 					<tr>
@@ -141,59 +316,32 @@
 						</td>
 					</tr>
 					<tr>
-						<td><img src="../images/book_01.jpg" alt="#">
-							<p class="px">课本1</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						<td><img src="../images/book_04.jpg" alt="#">
+							<p class="px">课本4</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(4)">加入购物车</button>
 						</td>
-						<td><img src="../images/book_02.jpg" alt="#">
-							<p class="px">课本2</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
+						<td><img src="../images/book_05.jpg" alt="#">
+							<p class="px">课本5</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(5)">加入购物车</button>
 						</td>
-						<td><img src="../images/book_03.jpg" alt="#">
-							<p class="px">课本3</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
+						<td><img src="../images/book_06.jpg" alt="#">
+							<p class="px">课本6</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(6)">加入购物车</button>
 						</td>
 					</tr>
 					<tr>
-						<td><img src="../images/book_01.jpg" alt="#">
-							<p class="px">课本1</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(1)">加入购物车</button>
+						<td><img src="../images/book_07.jpg" alt="#">
+							<p class="px">课本7</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(7)">加入购物车</button>
 						</td>
-						<td><img src="../images/book_02.jpg" alt="#">
-							<p class="px">课本2</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(2)">加入购物车</button>
+						<td><img src="../images/book_08.jpg" alt="#">
+							<p class="px">课本8</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(8)">加入购物车</button>
 						</td>
-						<td><img src="../images/book_03.jpg" alt="#">
-							<p class="px">课本3</p>
-							<p>价格：<span>20</span></p><button onclick="updateNum(3)">加入购物车</button>
+						<td><img src="../images/book_09.jpg" alt="#">
+							<p class="px">课本9</p>
+							<p>价格：<span>20</span></p><button onclick="updateNum(9)">加入购物车</button>
 						</td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<table border="10px">
-					<tr>
-						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_03.jpg" alt="#"><button>yes</button></td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<table border="10px">
-					<tr>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<table border="10px">
-					<tr>
-						<td><img src="../images/book_05.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
-						<td><img src="../images/book_04.jpg" alt="#"><button>yes</button></td>
 					</tr>
 				</table>
 			</div>
@@ -217,41 +365,34 @@
 					lis[j].className = "";
 					divs[j].style.display = "none";//全部隐藏
 				}
-				// this.className = "active";
+				this.className = "active";
 				//显示对应的页面
 				divs[this.index].style.display = "block";
 			}
 		}
 		/////////////////////////////////////////////////////////////////////////////////////
 
-		var item01 = localStorage.item01;
-
 
 		//名字存储
-		var text1 = ['课本1', '课本2', '科本3', '课本3'];
+		var text1 = ['课本1', '课本2', '课本3', '课本4', '课本5', '课本6', '课本7', '课本8', '课本9', '课本10', '课本11', '课本12', '课本13', '课本14'];
 		localStorage.setItem('text1', JSON.stringify(text1));
 		text1 = JSON.parse(localStorage.getItem('text1'));
 
 		//价格存入数组
-		var price1 = ['20', '11', '23', '123', '321'];
+		var price1 = ['20', '11', '23', '123', '321', '43', '14', '11', '43', '34', '86', '45', '87', '57'];
 		localStorage.setItem('price1', JSON.stringify(price1));
 		price1 = JSON.parse(localStorage.getItem('price1'));
 
-		//存入数组
-		var arrList = ['北京', '上海', '广州', '深圳', '西安'];
-		localStorage.setItem('arrList', JSON.stringify(arrList));
-		arrList = JSON.parse(localStorage.getItem('arrList'));
-
-
 		//数量数组
-		var item = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+		var item = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 		localStorage.setItem('item', JSON.stringify(item));
 		item = JSON.parse(localStorage.getItem('item'));
 
 
 		function updateNum(n) {
 			item = JSON.parse(localStorage.getItem('item'));
-			temp = item[n - 1];
+			item[n-1] ++;
+			localStorage.setItem('item', JSON.stringify(item));
 		}
 	</script>
 </body>

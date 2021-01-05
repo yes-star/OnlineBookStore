@@ -12,13 +12,17 @@
             padding: 0;
         }
 
+        body {
+            background-image: linear-gradient(to bottom right, rgb(114, 135, 254), rgb(130, 88, 186));
+        }
+
         header {
             position: relative;
             height: 50px;
         }
 
         div {
-            border: 1px;
+            border: 0px;
             border-color: lightcoral;
             border-style: dashed;
             height: 460px;
@@ -53,7 +57,7 @@
             border-top: 0px solid orange;
             height: 100px;
             width: 100%;
-            background-color: rgba(111, 235, 208, 0.034);
+            background-color:pink;
         }
 
         #div2 {
@@ -98,6 +102,10 @@
             position: relative;
         }
 
+        #lunbo_1 {
+            border-radius: 41px;
+        }
+
         #buy_it {
             float: left;
             position: absolute;
@@ -107,6 +115,22 @@
             display: block;
             bottom: 90px;
             right: 30px;
+        }
+       
+
+        .big {
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+
+        .big:hover {
+            transform: scale(1.2);
+        }
+
+        button {
+            background-image:url(../images/bt_buy.jpg);
+            width: 40px;
+            height: 80px;
         }
     </style>
 </head>
@@ -135,40 +159,19 @@
         </header>
         <div id="tets_98">
             <img id="lunbo_1" width="960px" height="400px" src="../images/jdbook01.webp.jpg">
-            <button id="buy_it">BUY IT!</button>
+            <a href="../page/ClassifyPage.html"><button id="buy_it"></button></a>
         </div>
     </div>
-    <!-- 小说 -->
-    <!-- <div id="stories">
-        <header style="text-align: center;text-shadow: 1px;">
-            <h2 style="color: orangered;">小说</h2>
-        </header>
-        <div>
-            <img src="#" alt="1">
-            <img src="#" alt="2">
-            <img src="#" alt="3">
-        </div>
-    </div> -->
-    <!-- 经典书籍 -->
-    <!-- <div id="classbook">
-        <header style="text-align: center;text-shadow: 1px;">
-            <h2 style="color: orangered;">经典书籍</h2>
-        </header>
-        <div>
-            <img src="#" alt="1">
-            <img src="#" alt="2">
-            <img src="#" alt="3">
-        </div>
-    </div> -->
     <!-- 带哥推荐图书 -->
     <div id="recommendbook">
         <header style="text-align: center;text-shadow: 1px;">
-            <h2 style="color: orangered;">带哥推荐图书</h2>
+            <h2 style="color: orangered;">经典名著阅读</h2>
         </header>
         <div>
-            <img src="#" alt="1">
-            <img src="#" alt="2">
-            <img src="#" alt="3">
+            <img class="big" width="235px" height="382px" src="../images/1.jpg" alt="1">
+            <img class="big" width="235px" height="382px" src="../images/2.jpg" alt="2">
+            <img class="big" width="235px" height="382px" src="../images/3.jpg" alt="3">
+            <img class="big" width="235px" height="382px" src="../images/4.jpg" alt="3">
         </div>
     </div>
     <footer id="copyright">版权所有，翻版必究。如有疑问请联系：sny666@email.swu.edu.cn</footer>
