@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            background-image: linear-gradient(to bottom right, #fddb92, #d1fdff);
+        }
+
         .wrap {
             width: 800px;
             margin: 0 auto;
@@ -17,6 +32,11 @@
             position: relative;
             top: 0;
             padding: 10px;
+        }
+
+        .box,
+        #box {
+            border-radius: 18px;
         }
 
         .check,
@@ -71,6 +91,14 @@
             margin: 15px;
         }
 
+        #dele {
+            background-color: lightskyblue;
+            font-size: 16px;
+            width: 120px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
         #proNum,
         #totalPri,
         #textP {
@@ -96,10 +124,72 @@
         #over {
             margin-left: 30px;
         }
+
+        /* 导航栏 */
+        #swutu {
+			border: 0px;
+            border-color: lightcoral;
+            border-style: dashed;
+            vertical-align: top;
+            border: 0px;
+			width: 100px;
+			height: 100px;
+        }
+
+        a {
+            height: 100px;
+            border: 0px;
+            border-color: orange;
+            border-style: dashed;
+            font-size: 28px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            display: inline-block;
+            line-height: 100px;
+        }
+		#div1 {
+			border-top: 0px solid orange;
+			height: 100px;
+			width: 100%;
+			background-color: pink;
+		}
+
+		#a-loading {
+			position: absolute;
+			right: 0;
+		}
+
+		#a-registration {
+            position: absolute;
+            right: 68px;
+        }
+
+        #black_img {
+			/* 对齐方式 */
+            vertical-align: top;         
+            position: absolute;
+            right: 60px;
+            top: 30px;
+			border: 0px;
+            border-style: dashed;
+            border: 0px;
+			width: 3px;
+			height: 40px;
+        }
     </style>
 </head>
 
 <body>
+    <div id="div1">
+		<img id="swutu" src="../images/图片1.png" height="100px" width="100px" alt="">
+		<a href="../page/FirstPage.html">首页</a>
+		<a href="../page/ClassifyPage.html">分类</a>
+		<!-- <a href="../page/ShoppingPage.html">购物车</a> -->
+		<a href="../page/LoadingPage.html" id="a-loading">登录</a>
+		<img id="black_img" src="../images/黑图.png" height="40px" width="3px" alt="">
+		<a href="../page/RegistrationPage.html" id="a-registration">注册</a>
+	</div>
     <form method="POST">
         <div class="wrap">
             <div id="box">
@@ -108,9 +198,9 @@
                 <span id="move"></span>
                 <span id="product">一共选中</span>
                 <span id="proNum">件商品</span>
-                <span id="textP">,总价格为(不含运费)$</span>
-                <span id="totalPri">元</span>
-                <input type="button" value="结算" id="over">
+                <span id="textP">,总价格为(不含运费)￥</span>
+                <span id="totalPri">元。</span>
+                <input type="button" style="font-style: initial;border-radius: 12px;width: 60px;background-color: #9face6;" value="结算" id="over">
             </div> 
         </div>
     </form>

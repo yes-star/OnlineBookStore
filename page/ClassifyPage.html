@@ -12,18 +12,18 @@
 		}
 
 		html {
-			height: 100%;
+			height: 150%;
 		}
 
-		@keyframes activef {
+		/* @keyframes activef {
 			0% {background-color: #d9afd9;}
 			50% {background-color: #96deda;}
 			100% {background-color: #d9afd9;}
-		}
+		}*/
 
 		body {
-            animation: activef 7s infinite;
-        }
+			background-image: linear-gradient(to bottom right, #fff1eb, #ace0f9);
+		}
 
 		h1 {
 
@@ -53,18 +53,27 @@
 		}
 
 		@keyframes activef1 {
-			0% {background-color: #e14fad;}
-			50% {background-color: #f9d423;}
-			100% {background-color: #e14fad;}
+			0% {
+				background-color: #e14fad;
+			}
+
+			50% {
+				background-color: #f9d423;
+			}
+
+			100% {
+				background-color: #e14fad;
+			}
 		}
-		
+
 		.active {
-            /* background-image: linear-gradient(to bottom right, #d9afd9, #d9afd9); */
+			/* background-image: linear-gradient(to bottom right, #d9afd9, #d9afd9); */
 			color: white;
 			animation: activef1 7s infinite;
-            border-bottom: 3px solid red;
-            font-size: 38px;
-        }
+			border-bottom: 3px solid red;
+			border-radius: 16px;
+			font-size: 38px;
+		}
 
 		#shop_img {
 			position: absolute;
@@ -83,7 +92,7 @@
 		#first {
 			width: 960px;
 			height: 200px;
-			background-color: pink;
+			background-color: none;
 			margin: 0 auto;
 		}
 
@@ -91,19 +100,29 @@
 			width: 960px;
 			height: 50px;
 			display: block;
+			border-radius: 16px;
 			background-color: rgb(192, 255, 200);
 		}
 
 		@keyframes myframe {
-			0% {background-color:  rgb(206, 192, 255);}
-			50% {background-color:rgba(57, 209, 90, 0.795);}
-			100% {background-color:  rgb(206, 192, 255);}
+			0% {
+				background-color: rgb(206, 192, 255);
+			}
+
+			50% {
+				background-color: rgba(57, 209, 90, 0.795);
+			}
+
+			100% {
+				background-color: rgb(206, 192, 255);
+			}
 		}
 
 		#right-list {
 			width: 960px;
 			height: 1040px;
 			display: block;
+			border-radius: 14px;
 			animation: myframe 7s infinite;
 		}
 
@@ -113,6 +132,7 @@
 
 		table {
 			width: 960px;
+			border-radius: 14px;
 		}
 
 		tr {
@@ -133,6 +153,14 @@
 			display: block;
 			background-repeat: no-repeat;
 			border-radius: 50px;
+			width: 92px;
+			background-color: #68e0cf;
+			
+		}
+
+
+		button:hover {
+			background-color: #209cff;
 		}
 
 		img {
@@ -141,16 +169,82 @@
 			height: 250px;
 		}
 
-		
+		/* 导航栏 */
+
+		div {
+            border: 0px;
+            border-color: lightcoral;
+            border-style: dashed;
+            height: 460px;
+        }
+
+        #swutu {
+			border: 0px;
+            border-color: lightcoral;
+            border-style: dashed;
+            vertical-align: top;
+            border: 0px;
+			width: 100px;
+			height: 100px;
+        }
+
+        a {
+            height: 100px;
+            border: 0px;
+            border-color: orange;
+            border-style: dashed;
+            font-size: 28px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            display: inline-block;
+            line-height: 100px;
+        }
+		#div1 {
+			border-top: 0px solid orange;
+			height: 100px;
+			width: 100%;
+			background-color: pink;
+		}
+
+		#a-loading {
+			position: absolute;
+			right: 0;
+		}
+
+		#a-registration {
+            position: absolute;
+            right: 68px;
+        }
+
+        #black_img {
+			/* 对齐方式 */
+            vertical-align: top;         
+            position: absolute;
+            right: 60px;
+            top: 30px;
+			border: 0px;
+            border-style: dashed;
+            border: 0px;
+			width: 3px;
+			height: 40px;
+        }
 	</style>
 </head>
 
 <body>
+	<div id="div1">
+		<img id="swutu" src="../images/图片1.png" height="100px" width="100px" alt="">
+		<a href="../page/FirstPage.html">首页</a>
+		<a href="../page/ClassifyPage.html">分类</a>
+		<a href="../page/ShoppingPage.html">购物车</a>
+		<a href="../page/LoadingPage.html" id="a-loading">登录</a>
+		<img id="black_img" src="../images/黑图.png" height="40px" width="3px" alt="">
+		<a href="../page/RegistrationPage.html" id="a-registration">注册</a>
+	</div>
 	<header>
-		<h1>
+		<h1 style="position: relative;text-align: center;">
 			书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;架
-			<img id="shop_img" src="../images/top_shop_cur.jpg" alt="">
-			<a id="shop_car">购物车</a>
 		</h1>
 	</header>
 	<div id="first">
@@ -347,7 +441,6 @@
 			</div>
 		</div>
 	</div>
-
 	<script>
 		var lis = document.getElementsByTagName("li");
 		var right = document.getElementById("right-list");
@@ -384,14 +477,14 @@
 		price1 = JSON.parse(localStorage.getItem('price1'));
 
 		//数量数组
-		var item = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+		var item = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 		localStorage.setItem('item', JSON.stringify(item));
 		item = JSON.parse(localStorage.getItem('item'));
 
 
 		function updateNum(n) {
 			item = JSON.parse(localStorage.getItem('item'));
-			item[n-1] ++;
+			item[n - 1]++;
 			localStorage.setItem('item', JSON.stringify(item));
 		}
 	</script>

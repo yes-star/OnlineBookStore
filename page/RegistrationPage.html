@@ -19,12 +19,12 @@
         }
 
         html {
-            height: 80%;
+            height: 90%;
         }
 
         body {
             height: 100%;
-            background-image: linear-gradient(to bottom right, rgb(114, 135, 254), rgb(130, 88, 186));
+            background-image: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
         }
 
         form {
@@ -40,6 +40,38 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+        }
+
+        .inp {
+            border: 0;
+            border-bottom: 1px solid rgb(128, 125, 125);
+        }
+
+        @keyframes acv1 {
+			0% {
+				background-color: #d9afd9;
+			}
+
+			50% {
+				background-color: #00c9ff;
+			}
+
+			100% {
+				background-color:  #d9afd9;
+			}
+		}
+        #Button1 {
+            margin-top: 40px;
+            margin-left: 70px;
+            background-color: #d9afd9;
+            border-radius: 16px;
+            font-size: 16px;
+            width: 100px;
+            font-family: sans-serif;
+        }
+
+        #Button1:hover {
+            animation: acv1 7s infinite;
         }
 
         #father {
@@ -67,6 +99,8 @@
         #btn2 {
             margin-top: 6px;
             border-radius: 10px;
+            width: 40px;
+            font-style:oblique;
         }
 
         #btn1 {
@@ -113,31 +147,31 @@
             <br />
             <div id="log">登录</div>
             <div id="son1">
-                <form  style="margin-left: 0px;" action="post" action="url" id="form-1">
+                <form style="margin-left: 0px;" action="post" action="url" id="form-1">
 
-                        <label>用户昵称：<input type="text" name="name" required="text"></label><br>
-                        <label>手机号码：<input type="text" name="phone_num" required="tel"></label><br>
-                        <label>邮箱号码：<input type="text" name="email_num" id="" required="email"></label><br>
-                        <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="pwd" id="a"
-                                required="password"></label><br>
-                        <label>确认密码：<input type="password" name="re_in_pwd" id="b" required="password"
-                                onclick="dui()"></label><br>
-                        <label></label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
-                        <input type="radio" name="gender" value="M" checked />男
-                        <input type="radio" name="gender" value="F" />女</label>
-                        <br />
-                        <label>验证码：<input type="text" placeholder="请输入验证码(区分大小写)" id="inputCode" required="required"
-                                autofocus onchange="check()">
-                            <canvas id="codeCanvas" width="80" height="20"
-                                onclick="createCode()"></canvas></label><br />
-                        <input id="btn1" type="submit" value="注册" id="sub-1" />
-                        <input id="btn2" type="reset" value="重置" />
+                    <label>用户昵称：<input class="inp" type="text" name="name" required="text"></label><br>
+                    <label>手机号码：<input class="inp" type="text" name="phone_num" required="tel"></label><br>
+                    <label>邮箱号码：<input class="inp" type="text" name="email_num" id="" required="email"></label><br>
+                    <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input class="inp" type="password" name="pwd"
+                            id="a" required="password"></label><br>
+                    <label>确认密码：<input class="inp" type="password" name="re_in_pwd" id="b" required="password"
+                            onclick="dui()"></label><br>
+                    <label></label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
+                    <input class="inp" type="radio" name="gender" value="M" checked />男
+                    <input class="inp" type="radio" name="gender" value="F" />女</label>
+                    <br />
+                    <label>验证码：<input class="inp" type="text" placeholder="请输入验证码(区分大小写)" id="inputCode" required="required"
+                            autofocus onchange="check()">
+                        <canvas id="codeCanvas" width="80" height="20" onclick="createCode()"></canvas></label><br />
+                    <input id="btn1" type="submit" value="注册" id="sub-1" />
+                    <input id="btn2" type="reset" value="重置" />
                 </form>
             </div>
         </div>
     </div>
     </div>
     <div></div>
+    <footer id="copyright">版权所有，翻版必究。如有疑问请联系：sny666@email.swu.edu.cn</footer>
     <script>
         var code;
         var bgc;

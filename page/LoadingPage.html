@@ -54,13 +54,46 @@
             width: 250px;
             height: 500px;
             border-radius: 14px;
-            padding: 0 60px;
+            padding: 0 76px;
             position: relative;
         }
 
         .inp {
             border: 0;
             border-bottom: 1px solid rgb(128, 125, 125);
+        }
+
+        #but-1 {
+            text-align: center;
+            text-size-adjust: 28px;
+        }
+
+        @keyframes acv1 {
+            0% {
+                background-color: #d9afd9;
+            }
+
+            50% {
+                background-color: #00c9ff;
+            }
+
+            100% {
+                background-color: #d9afd9;
+            }
+        }
+
+        #Button1 {
+            margin-top: 40px;
+            margin-left: 70px;
+            background-color: #d9afd9;
+            border-radius: 16px;
+            font-size: 16px;
+            width: 100px;
+            font-family: sans-serif;
+        }
+
+        #Button1:hover {
+            animation: acv1 7s infinite;
         }
 
         #btn1,
@@ -89,6 +122,10 @@
     <!-- <header>
         <h1>OnlineBookStore</h1>
     </header> -->
+    <div>
+        <a href="../page/FirstPage.html" runat="server" id="but-1">
+            <input id="Button1" type="button" value="返回首页" /></a>
+    </div>
     <div id="father">
         <div id="one">
             <br />
@@ -112,6 +149,7 @@
             </div>
         </div>
     </div>
+    <footer id="copyright">版权所有，翻版必究。如有疑问请联系：sny666@email.swu.edu.cn</footer>
 </body>
 
 </html>
